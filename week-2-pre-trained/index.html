@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ml5.js</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- ml5.js library -->
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+        <!-- Own JS code -->
+        <script defer src="./app.js"></script>
+    <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="title">
+            <h1>🐕 Spark the Dog 🐕</h1>
+            <p>Give em image, he gives answer.</p>
+        </div>
+        <main>
+            <p id="status">Waiting for model to load...</p>
+            <div id="upload-image">
+                <label>Upload your own: </label>
+                <input type="file" accept="image/*;capture=camera" id="file" />
+            </div>
+            <div id="result-field">
+                <img src="./images/hamster.jpg" id="output" />
+                <p id="prediction">Waiting for prediction...</p>
+                <p id="secondary-results"></p>
+            </div>
+        </main>
+    </body>
+</html>
