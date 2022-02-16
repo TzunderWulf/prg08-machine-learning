@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#title {
+    padding: 0 20px;
+    text-align: center;
+}
+
+#list-of-assignments {
+    width: 800px;
+    margin: auto;
+}
+
+.assignment {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.link {
+    border: 2px solid rgb(17, 17, 83);
+    background-color: rgb(17, 17, 83);
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
