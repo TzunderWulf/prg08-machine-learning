@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Retraining the ML5.js model</title>
+        <!-- ML5.js algorithm -->
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+        <!-- our own js -->
+        <script defer src="./app.js"></script>
+        <!-- our own css -->
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title">
+            <h1>Are you wearing a mask or not?</h1>
+            <p>
+                Retrain the ML5.js model. Add around 20 images while wearing a mask, and 20 without.<br>
+                Try and move/turn your head while taking the photos. After taking the photos, click 
+                on train and <br> it will start predicting. Taking photos takes some time, so please wait
+                and don't hit <br> the button several times in a row (I've done it, it's not fun).
+            </p>
+        </div>
+        <h2 id="message">Waiting for model to load...</h2>
+        <div class="photos-webcam">
+            <div>
+                <video autoplay playsinline muted id="webcam" width="700" height="300"></video>
+            </div>
+            <div class="taking-photos">
+                <button id="mask" class="take-photo">Wearing a mask</button>
+                <button id="no-mask" class="take-photo">Not wearing a mask</button>
+            </div>
+        </div>
+        <div class="training-loading">
+            <button id="train">Train the model</button>
+            <button id="save">Save model</button>
+            <input type="file" multiple id="load">
+        </div>
+        <p class="center">Saving works, but loading doens't.</p>
+    </body>
+</html>
