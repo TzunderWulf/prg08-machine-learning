@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What finger?</title>
+        <script defer src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
+        <script defer src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
+        <script defer src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
+        <script defer src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.js"></script>
+        <script defer src="./app.js"></script>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div>
+            <h1>What finger?</h1>
+            <p>It predicts every 200ms, so five times per second.</p>
+        </div>       
+        <div>
+            <video id="video" playsinline autoplay></video>
+            <canvas id="output"></canvas>
+        </div>
+        <p id="result">Result</p>
+    </body>
+</html>
