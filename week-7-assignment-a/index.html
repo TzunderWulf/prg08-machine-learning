@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <title>ML5 Weerbericht</title>
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+        <script defer src="./app.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1 class="title">Suggesties voor activiteiten gebaseerd op het weer</h1>
+            <div>
+                <p id="error"></p>
+                <div class="input">
+                    <label for="precipitation">Neerslag</label>
+                    <input type="text" id="precipitation" name="precipitation">
+                </div>
+                <div class="input">
+                    <label for="min-temp">Minimum temperatuur</label>
+                    <input type="text" id="min-temp" name="min-temp">
+                </div>
+                <div class="input">
+                    <label for="max-temp">Maximale temperatuur</label>
+                    <input type="text" id="max-temp" name="max-temp">
+                </div>
+                <div class="input">
+                    <label for="wind-speed">Windsnelheid</label>
+                    <input type="text" id="wind-speed" name="wind-speed">
+                </div>
+                <button id="prediction-btn" type="button" disabled>Zie suggesties</button>
+            </div>
+            <h2 id="prediction"></h2>
+            <div id="activity-list">
+            </div>
+        </div>
+    </body>
+</html>
