@@ -1,3 +1,5 @@
+import { createChart, updateChart } from "./scatterplot.js";
+
 let nn, weather, confidence;
 
 let predictionButton        = document.getElementById("prediction-btn");
@@ -20,6 +22,70 @@ let locations = [
     { name: "Beeld van Erasmus", outdoors: true },
     { name: "Erasmusbrug", outdoors: true }
 ];
+
+function loadData() {
+    Papa.parse("./data/weather.csv", {
+        download: true,
+        header: true, 
+        dynamicTyping: true,
+        complete: results => {
+            for (let day of results.data) {
+                if (day.weather == "rain") {
+                    day.weather = 1;
+                }
+                if (day.weather == "snow") {
+                    day.weather = 2;
+                }
+                if (day.weather == "drizzle") {
+                    day.weather = 3;
+                }
+                if (day.weather == "fog") {
+                    day.weather = 4;
+                }
+                if (day.weather == "sun") {
+                    day.weather = 5;
+                }
+            }
+            drawWeatherVersusTemperature(results.data);
+            drawWeatherVersusPrecipitation(results.data);
+            drawWeatherVersusWind(results.data);
+        },
+        
+    })
+}
+
+function drawWeatherVersusTemperature(data) {
+    const chartdata = data.map(day => ({
+        x: day.weather,
+        y: day.temp_max,
+    }))
+
+    const chartdata2 = data.map(day => ({
+        x: day.weather,
+        y: day.temp_min,
+    }))
+    
+    createChart(chartdata, "max temperatuur vs weer", "weer", "temperatuur", "temp-weather-chart");
+    updateChart("min temperatuur vs weer", chartdata2)
+}
+
+function drawWeatherVersusPrecipitation(data) {
+    const chartdata = data.map(day => ({
+        x: day.weather,
+        y: day.precipitation,
+    }))
+    
+    createChart(chartdata, "neerslag vs weer", "weer", "neerslag", "precipitation-weather-chart");
+}
+
+function drawWeatherVersusWind(data) {
+    const chartdata = data.map(day => ({
+        x: day.weather,
+        y: day.wind,
+    }))
+    
+    createChart(chartdata, "windkracht vs weer", "weer", "windkracht", "windspeed-weather-chart");
+}
 
 function loadNeuralNework() {
     nn = ml5.neuralNetwork({
@@ -106,4 +172,5 @@ function showActivity(information, parentNode) {
     parentNode.appendChild(div);
 }
 
+loadData();
 loadNeuralNework();

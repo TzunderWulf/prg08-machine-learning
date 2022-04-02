@@ -27,7 +27,6 @@ function drawScatterplot(data) {
     }))
     
     createChart(chartdata)
-   
 }
 
 //

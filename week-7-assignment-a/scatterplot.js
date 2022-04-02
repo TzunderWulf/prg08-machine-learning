@@ -1,15 +1,15 @@
-const canvas = document.getElementById('myChart')
 let myChart
 
 // documentatie 
 // https://www.chartjs.org/docs/latest/charts/scatter.html
 
-export function createChart(columns){
+export function createChart(columns, label, xName, yName, idElement){
+    const canvas = document.getElementById(idElement)
     const config = {
         type: 'scatter',
         data: {
             datasets: [{
-                label: 'Genre vs rating',
+                label: label,
                 data: columns,
                 backgroundColor: 'rgb(185, 185, 255)'
             }]
@@ -17,10 +17,10 @@ export function createChart(columns){
         options: {
             scales: {
                 x: {
-                    title: {display: true, text: 'Genres'}
+                    title: {display: true, text: xName}
                 },
                 y: {
-                    title: {display: true, text: 'Rating'}
+                    title: {display: true, text: yName}
                 }
             },
             layout: {
