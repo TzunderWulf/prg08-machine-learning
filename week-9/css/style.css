@@ -122,3 +122,25 @@ button {
 
     padding: 10px 10px;
 }
+
+@media only screen and (min-width: 1280px) {
+    #weather-form {
+        width: 50%;
+    }
+    
+    input[type=submit] {
+        cursor: pointer;
+    }
+    
+    .information {
+        width: 50%;
+    }
+    
+    #activity-list {
+        width: 50%;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+}
