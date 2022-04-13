@@ -100,7 +100,7 @@ function submitForm(event) {
 function selectActivities(weather) {
     let recommendedActivities = [];
 
-    if (weather == "drizzle" || weather == "rain" || weather == "snow") {
+    if (weather == "drizzle" || weather == "rain" || weather == "snow" || weather == "fog") {
         for (let location of locations) {
             if (!location.outdoors) {
                 recommendedActivities.push(location);
