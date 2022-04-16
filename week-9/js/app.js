@@ -82,7 +82,7 @@ function submitForm(event) {
                     weatherInDutch = "dat het lastig te voorspellen is"
                     break;
             }
-            console.log(message)
+            
             message.innerHTML = `Het lijkt ${weatherInDutch}.`;
             
             let activities = selectActivities(weather);
